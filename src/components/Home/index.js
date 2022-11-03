@@ -6,11 +6,20 @@ import WLogo from '../../assets/images/W/logo-w.png'
 
 import {Link} from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
+import Logo from './Logo'
 import { useEffect, useState } from 'react'
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const hiArray = ['G','r','e','e','t','i','n','g','s',',']
     const companyArray = ['W','e','b',' ','d','e','s','i','g','n']
+
+    useEffect(() => {
+        setTimeout(() => {
+            setLetterClass('text-animate-hover')
+          }, 3000)
+    },[])
+
+
     return (
         <div className='container home-page'>
         <div className='text-zone'>
@@ -33,15 +42,16 @@ const Home = () => {
               idx={10}/>
             </h1>
             <h2>
-                <img src={DLogo} alt="company" />
+                <img className="Dlogo" src={DLogo} alt="company" />
                 esign 
-                <img src={FLogo} alt="company" />
-                ront-edge
-                <img src={WLogo} alt="company" />
+                <img className="Flogo" src={FLogo} alt="company" />
+                ront-edge 
+                <img className="Wlogo" src={WLogo} alt="company" />
                 ebsites
             </h2>
             <Link to="/contact" className='flat-button'>CONTACT US</Link>
             </div>
+            <Logo />
         </div>
     );
 }
