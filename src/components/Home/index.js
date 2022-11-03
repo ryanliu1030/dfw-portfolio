@@ -1,5 +1,9 @@
 import './index.scss'
-import LogoTitle from '../../assets/images/logo-s.png'
+import LogoTitle from '../../assets/images/logo-dfw.png'
+import DLogo from '../../assets/images/D/logo-d.png'
+import FLogo from '../../assets/images/F/logo-f.png'
+import WLogo from '../../assets/images/W/logo-w.png'
+
 import {Link} from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
 import { useEffect, useState } from 'react'
@@ -28,7 +32,14 @@ const Home = () => {
               strArray={companyArray}
               idx={10}/>
             </h1>
-            <h2>Website Design / SEO Optimization / Brand Design</h2>
+            <h2>
+                <img src={DLogo} alt="company" />
+                esign 
+                <img src={FLogo} alt="company" />
+                ront-edge
+                <img src={WLogo} alt="company" />
+                ebsites
+            </h2>
             <Link to="/contact" className='flat-button'>CONTACT US</Link>
             </div>
         </div>
