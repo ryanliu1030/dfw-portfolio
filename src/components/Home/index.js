@@ -6,8 +6,8 @@ import WLogo from '../../assets/images/W/logo-w.png'
 
 import {Link} from 'react-router-dom'
 import AnimatedLetters from '../AnimatedLetters'
-import Logo from './Logo'
 import { useEffect, useState } from 'react'
+import Loader from 'react-loaders'
 const Home = () => {
     const [letterClass, setLetterClass] = useState('text-animate')
     const hiArray = ['G','r','e','e','t','i','n','g','s',',']
@@ -20,7 +20,7 @@ const Home = () => {
     },[])
 
 
-    return (
+    return (        <>
         <div className='container home-page'>
         <div className='text-zone'>
             <h1><AnimatedLetters
@@ -51,8 +51,9 @@ const Home = () => {
             </h2>
             <Link to="/contact" className='flat-button'>CONTACT US</Link>
             </div>
-            <Logo />
         </div>
+        <Loader type="pacman" />
+        </>
     );
 }
 

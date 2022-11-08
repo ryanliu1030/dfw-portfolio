@@ -59,15 +59,18 @@
     animation: fadeIn 1s 1.8s backwards;
     img {
       opacity: 0;
-      margin-left: 5px;
-      width: 32px;
+      margin-left: 7px;
+      width: 30px;
       height: 32px;
       animation: rotateIn 1s linear both;
       animation-delay: 1.4s;
       
     }
     .Flogo{
-      width:30px;
+      width:27px;
+    }
+    .Wlogo{
+      width: 30px;
     }
   }
 
