@@ -1,4 +1,4 @@
-import { faAngular } from '@fortawesome/free-brands-svg-icons'
+import { faVuejs } from '@fortawesome/free-brands-svg-icons'
 import { faJsSquare } from '@fortawesome/free-brands-svg-icons'
 
 import { faReact } from '@fortawesome/free-brands-svg-icons'
@@ -40,7 +40,7 @@ const About = () => {
             <div className='stage-cube-cont'>
                 <div className='cubespinner'>
                     <div className='face1'>
-                        <FontAwesomeIcon icon={faAngular} color="#DD0031" />
+                        <FontAwesomeIcon icon={faVuejs} color="#42b883" />
                     </div>
 
                     <div className='face2'>

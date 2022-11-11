@@ -3,21 +3,27 @@ import { Link, NavLink } from 'react-router-dom'
 import LogoS from '../../assets/images/logo-dfw.png'
 import LogoSubtitle from '../../assets/images/logo-sub.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {faEnvelope, faHome, faUser} from '@fortawesome/free-solid-svg-icons'
+import {faBars, faClose, faEnvelope, faHome, faUser} from '@fortawesome/free-solid-svg-icons'
 import { faDiscord, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
-function Sidebar () {
+import { useState } from 'react'
+function Sidebar () {   
+   const [showNav, setShowNav] = useState(false);
    return (
     <div className='nav-bar'>
          <Link className='logo' to='/'>
             <img src={LogoS} alt="logo" />
-            <img src={LogoSubtitle} alt="slobodan" />
+            <img src={LogoSubtitle} alt="web-design" />
          </Link>
-         <nav>
-            <NavLink exact="true" activeclassname="active" to="/">
-               <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
-            </NavLink>
+         <nav className={showNav ? 'mobile-show' : ''}>
+         <NavLink 
+            exact="true" activeclassname="active" to="/"
+            onClick={() => setShowNav(false)}
+         >
+         <FontAwesomeIcon icon={faHome} color="#4d4d4e" />
+         </NavLink>
 
             <NavLink 
+               onClick={() => setShowNav(false)}
                exact="true" 
                activeclassname="active"
                className="about-link"
@@ -26,6 +32,7 @@ function Sidebar () {
                <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
             </NavLink>
             <NavLink 
+               onClick={() => setShowNav(false)}
                exact="true" 
                activeclassname="active"
                className="contact-link"
@@ -33,6 +40,14 @@ function Sidebar () {
              >
                <FontAwesomeIcon icon={faEnvelope} color="#4d4d4e" />
             </NavLink>
+
+            <FontAwesomeIcon 
+               onClick={() => setShowNav(false)}
+               icon={faClose}
+               color="#ffd700"
+               size='3x'
+               className='close-icon'
+            />
          </nav>
          <ul>
             <li>
@@ -67,6 +82,13 @@ function Sidebar () {
 
             </li>
          </ul>
+         <FontAwesomeIcon 
+            onClick={() => setShowNav(true)}
+            icon={faBars}
+            color="#ffd700"
+            size='3x'
+            className='hamburger-icon'
+         />
       </div>
    )
 }
